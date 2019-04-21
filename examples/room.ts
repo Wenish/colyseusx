@@ -1,7 +1,7 @@
 import { Room, Client } from "colyseus";
 import store from './store'
 
-export class MyRoom extends Room {
+export class MyRoom extends Room<any> {
     // When room is initialized
     onInit (options: any) { }
 
@@ -16,9 +16,12 @@ export class MyRoom extends Room {
 
     // When a client sends a message
     onMessage (client: Client, message: any) {
-        var actionType = message.actionType // example: 'SET_COUNTER'
-        var payload = message.payload // example: 5
+        var actionType = message.actionType = 'resetCounter' // example: 'SET_COUNTER'
+        var payload = message.payload = 5 // example: 5
         store.dispatch(actionType, client, payload)
+        store.dispatch('increment')
+        store.dispatch('increment')
+        store.dispatch('decrement')
     }
 
     // When a client leaves the room

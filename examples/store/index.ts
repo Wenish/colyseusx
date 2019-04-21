@@ -1,4 +1,4 @@
-import colyseusx from 'colyseusx'
+import colyseusx from '../../src'
 
 import counter from './modules/counter'
 

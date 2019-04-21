@@ -1,0 +1,26 @@
+{
+  "name": "colyseusx",
+  "version": "0.10.0",
+  "description": "Centralized State Management for Colyseus",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "colyseus": "^0.10.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wenish/colyseusx.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wenish/colyseusx/issues"
+  },
+  "homepage": "https://github.com/Wenish/colyseusx#readme"
+}

@@ -18,7 +18,7 @@ export class MyRoom extends Room<any> {
     onMessage (client: Client, message: any) {
         var actionType = message.actionType = 'resetCounter' // example: 'SET_COUNTER'
         var payload = message.payload = 5 // example: 5
-        store.dispatch(actionType, client, payload)
+        store.dispatch(actionType, payload)
         store.dispatch('increment')
         store.dispatch('increment')
         store.dispatch('decrement')

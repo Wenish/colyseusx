@@ -1,25 +1,25 @@
 import { Client } from "colyseus";
 import { Schema, type } from "@colyseus/schema";
 
-class State extends Schema {
+class StateCounter extends Schema {
     @type("number")
     counter: number = 0
 }
 
 const mutations = {
-    setCounter (state: State, payload: number) {
+    setCounter (state: StateCounter, payload: number) {
         state.counter = payload
     },
-    increment (state: State) {
+    increment (state: StateCounter) {
         state.counter++
     },
-    decrement (state: State) {
+    decrement (state: StateCounter) {
         state.counter--
     }
 }
 
 const getters = {
-    evenOrOdd: (state: State) => state.counter % 2 === 0 ? 'even' : 'odd'
+    evenOrOdd: (state: StateCounter) => state.counter % 2 === 0 ? 'even' : 'odd'
 }
 
 const actions = {
@@ -44,7 +44,7 @@ const actions = {
 }
 
 export default {
-    State,
+    StateCounter: StateCounter,
     getters,
     actions,
     mutations

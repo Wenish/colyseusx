@@ -1,5 +1,5 @@
 import { MapSchema, Schema } from "@colyseus/schema";
-
+/*
 export interface IStateRoot extends Schema {
     version: string
 }

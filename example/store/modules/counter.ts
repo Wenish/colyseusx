@@ -44,7 +44,7 @@ const actions = {
 }
 
 export default {
-    StateCounter: StateCounter,
+    State: StateCounter,
     getters,
     actions,
     mutations

@@ -11,13 +11,28 @@ export default new colyseusx.Store({
     }
 })
 */
-class StateRoot extends Schema implements IStateRoot {
+
+class StateVersion extends Schema implements IState {
     @type('string')
     version: string = '1.0.0'
+
+    mutations: MutationTree<StateVersion> = {
+        setVersion (state, payload: string) {
+            state.version = payload
+        }
+    }
+
+    commit (type: string) {
+
+    }
 }
 
-const options: IStoreOptions<IStateRoot> = {
-    state: new StateRoot()
+interface IState extends Schema {
+    
 }
 
-export default new colyseusx.Store<IStateRoot>(options)
+interface MutationTree<S> {
+    [key: string]: Mutation<S>;
+}
+
+export type Mutation<S> = (state: S, payload?: any) => any;

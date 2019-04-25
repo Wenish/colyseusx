@@ -17,7 +17,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "tsc src/example/index.ts && node src/example/index.js"
+    "example": "tsc src/example/index.ts && node src/example/index.js",
+    "testStore": "tsc src/test.ts"
   },
   "repository": {
     "type": "git",

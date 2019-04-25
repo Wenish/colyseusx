@@ -1,6 +1,5 @@
 import colyseusx from '../../src'
 import { Schema, type } from '@colyseus/schema';
-import { IStateRoot } from './types';
 import { IStoreOptions } from '../../src/types';
 /*
 import counter from './modules/counter'

@@ -3,9 +3,6 @@
   "version": "0.10.0",
   "description": "Centralized State Management for Colyseus",
   "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
   "dependencies": {
     "colyseus": "^0.10.6",
     "ts-node": "^8.1.0",
@@ -13,11 +10,12 @@
   },
   "devDependencies": {
     "express": "^4.16.4",
-    "express-ping": "^1.4.0"
+    "express-ping": "^1.4.0",
+    "nodemon": "^1.18.11"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "tsc src/example/index.ts && node src/example/index.js",
+    "dev": "nodemon",
     "testStore": "tsc src/test.ts"
   },
   "repository": {

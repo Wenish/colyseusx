@@ -8,19 +8,19 @@ interface MutationTree<S> {
 export type Mutation<S> = (state: S, payload?: any) => any;
 
 
-interface IStore<S> extends Schema {
-    stateRoot: S
+interface IStore<S> {
+    state: S
     commit(type: string)
     dispatch(type: string)
 }
 
-class Store<S> extends Schema implements IStore<S> {
-    constructor (stateRoot: S) {
-        super()
-        stateRoot = stateRoot
-    }
-    stateRoot: S & IStateModule<S>
+class Store<S> implements IStore<S> {
 
+    constructor (stateRoot: S & IStateModule<S>) {
+        this.state = stateRoot
+        console.log(stateRoot)
+    }
+    state: S & IStateModule<S>
     /*
     mutations: MutationTree<StateVersion> = {
         setVersion (state, payload: string) {
@@ -57,6 +57,7 @@ interface IStateRoot extends Schema {
 }
 
 
-var store = new Store<StateCounter>(new StateCounter())
+var store = new Store<StateRoot>(new StateRoot())
 
 console.log(store)
+console.log(store.state)
